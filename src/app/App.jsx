@@ -1,8 +1,6 @@
-
 function App() {
-  return (
-    <div/>
-  );
+  // TODO: entry point: all providers should be here
+  return <div />;
 }
 
 export default App;
