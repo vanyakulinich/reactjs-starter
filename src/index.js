@@ -2,8 +2,10 @@ import React from "react"
 import ReactDOM from "react-dom"
 import { Helmet } from "react-helmet"
 import { ThemeProvider } from "styled-components"
+import { Provider as ReduxProvider } from "react-redux"
 import { mainTheme, GlobalStyles } from "./themes/main.theme"
 import App from "./App"
+import { store } from "./redux"
 
 ReactDOM.render(
   <>
@@ -12,10 +14,12 @@ ReactDOM.render(
       {/* use other global metatags here */}
     </Helmet>
     <React.StrictMode>
-      <ThemeProvider theme={mainTheme}>
-        <GlobalStyles />
-        <App />
-      </ThemeProvider>
+      <ReduxProvider store={store}>
+        <ThemeProvider theme={mainTheme}>
+          <GlobalStyles />
+          <App />
+        </ThemeProvider>
+      </ReduxProvider>
     </React.StrictMode>
   </>,
   document.getElementById("root")
