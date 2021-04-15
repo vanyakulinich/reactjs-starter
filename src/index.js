@@ -3,7 +3,6 @@ import ReactDOM from "react-dom"
 import { Helmet } from "react-helmet"
 import App from "./App"
 
-import "./styles/index.css"
 ReactDOM.render(
   <>
     <Helmet>
