@@ -6,6 +6,7 @@ const MainLayoutWrapper = styled.div`
   height: 100vh;
   width: 100vw;
   background: ${(props) => props.theme.color.gray};
+  ${(props) => props.theme.flexColumn}
 `
 
 const MainLayout = ({ children, withFooter }) => {
@@ -19,11 +20,10 @@ const MainLayout = ({ children, withFooter }) => {
 }
 
 MainLayout.propTypes = {
-  children: PropTypes.oneOf([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-    PropTypes.instanceOf(null),
-  ]),
+  children: PropTypes.oneOfType(
+    [PropTypes.arrayOf(PropTypes.node), PropTypes.node],
+    PropTypes.instanceOf(null)
+  ),
   withFooter: PropTypes.bool,
 }
 
