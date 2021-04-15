@@ -7,6 +7,17 @@ export const mainTheme = {
     white: "#ffffff",
     black: "#000000",
   },
+  flexRow: `
+    dispaly: flex;
+    justify-content: center;
+    align-items: center;
+  `,
+  flexColumn: `
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  `,
 }
 
 // add more global styles here
@@ -17,7 +28,6 @@ export const GlobalStyles = createGlobalStyle`
         overflow: hidden;
         width: 100vw;
         height: 100vh;
-        background: ${mainTheme.color.gray};
     }
 
     * {

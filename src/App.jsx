@@ -1,17 +1,11 @@
 import React from "react"
-import { ThemeProvider } from "styled-components"
-import { mainTheme, GlobalStyles } from "./themes/main.theme"
+import MainLayout from "./layouts/MainLayout"
 
 const App = () => {
-  // TODO: entry point: all providers should be here
-
   return (
-    <>
-      <ThemeProvider theme={mainTheme}>
-        <GlobalStyles />
-        <div>Starter</div>
-      </ThemeProvider>
-    </>
+    <MainLayout>
+      <div>Starter</div>
+    </MainLayout>
   )
 }
 
