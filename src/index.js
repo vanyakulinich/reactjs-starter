@@ -7,6 +7,8 @@ import { mainTheme, GlobalStyles } from "./themes/main.theme"
 import App from "./App"
 import { store } from "./redux"
 
+import "./localization/i18n"
+
 ReactDOM.render(
   <>
     <Helmet>
