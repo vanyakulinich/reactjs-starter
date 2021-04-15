@@ -1,10 +1,5 @@
-import React from "react"
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom"
+import React, { Suspense } from "react"
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom"
 
 import MainLayout from "./layouts/MainLayout"
 import { MainPage, DashboardPage } from "./pages"
@@ -25,20 +20,22 @@ const App = () => {
   ]
 
   return (
-    <MainLayout>
-      <Router>
-        <Switch>
-          {routesListMap.map(({ path, Component }) => (
-            <Route key={path} path={path} exact>
-              <Component />
+    <Suspense fallback="loading">
+      <MainLayout>
+        <Router>
+          <Switch>
+            {routesListMap.map(({ path, Component }) => (
+              <Route key={path} path={path} exact>
+                <Component />
+              </Route>
+            ))}
+            <Route path="*">
+              <Redirect to={PAGES_ROUTES.main} />
             </Route>
-          ))}
-          <Route path="*">
-            <Redirect to={PAGES_ROUTES.main} />
-          </Route>
-        </Switch>
-      </Router>
-    </MainLayout>
+          </Switch>
+        </Router>
+      </MainLayout>
+    </Suspense>
   )
 }
 

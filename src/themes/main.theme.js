@@ -8,7 +8,7 @@ export const mainTheme = {
     black: "#000000",
   },
   flexRow: `
-    dispaly: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
   `,
