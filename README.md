@@ -2,9 +2,8 @@
 
 TODO:
 
-- add docs
+- add docs with description of what is where
 - add hocs
 - add redux connection to components
-- add hooks
 - add pages buttons switcher for examples
 - add http service
