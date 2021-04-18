@@ -1,5 +1,6 @@
 {
   "common": {
-    "exampleHeader": "React App Starter"
+    "exampleHeader": "React App Starter Example Header",
+    "exampleFooter": "React Starter Example Footer"
   }
 }

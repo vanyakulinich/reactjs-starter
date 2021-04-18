@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Header from "../components/header/Header"
+import Footer from "../components/footer/Footer"
 
 const MainLayoutWrapper = styled.div`
   height: 100vh;
@@ -16,7 +17,7 @@ const MainLayout = ({ children, withFooter }) => {
     <MainLayoutWrapper>
       <Header />
       {children}
-      {withFooter && <>{/* TODO: add footer */}</>}
+      {withFooter && <Footer />}
     </MainLayoutWrapper>
   )
 }

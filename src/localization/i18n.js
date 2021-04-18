@@ -6,6 +6,7 @@ import LanguageDetector from "i18next-browser-languagedetector"
 import { AVAILABLE_LANGS } from "../constants"
 
 // check https://react.i18next.com/ for docs
+// by default translations json's are in public/locales/ folder
 i18n
   .use(Backend)
   .use(LanguageDetector)
