@@ -35,6 +35,6 @@ export const exampleAsync = () => async (dispatch, getState) => {
     // handle api error, e.g. dispatch some action for centralized errors in store
     dispatch(setError("exampleError"))
   } finally {
-    dispatch(setExampleValue("new value"))
+    dispatch(setExampleValue("new test value"))
   }
 }

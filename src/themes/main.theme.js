@@ -31,7 +31,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     * {
-        color: ${mainTheme.color.white};
+        color: ${mainTheme.color.black};
     }
 
 `

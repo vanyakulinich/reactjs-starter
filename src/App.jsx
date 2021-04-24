@@ -5,6 +5,7 @@ import MainLayout from "./layouts/MainLayout"
 import { MainPage, DashboardPage } from "./pages"
 
 import { PAGES_ROUTES } from "./constants"
+import withErrorsToastHandle from "./hocs/withErrorsToastHandle"
 
 const App = () => {
   // add more routes here
@@ -20,23 +21,21 @@ const App = () => {
   ]
 
   return (
-    <Suspense fallback="loading">
+    <Router>
       <MainLayout>
-        <Router>
-          <Switch>
-            {routesListMap.map(({ path, Component }) => (
-              <Route key={path} path={path} exact>
-                <Component />
-              </Route>
-            ))}
-            <Route path="*">
-              <Redirect to={PAGES_ROUTES.main} />
+        <Switch>
+          {routesListMap.map(({ path, Component }) => (
+            <Route key={path} path={path} exact>
+              <Component />
             </Route>
-          </Switch>
-        </Router>
+          ))}
+          <Route path="*">
+            <Redirect to={PAGES_ROUTES.main} />
+          </Route>
+        </Switch>
       </MainLayout>
-    </Suspense>
+    </Router>
   )
 }
 
-export default App
+export default withErrorsToastHandle(App)

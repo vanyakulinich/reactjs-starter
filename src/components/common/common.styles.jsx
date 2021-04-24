@@ -6,6 +6,11 @@ export const HeaderWrapper = styled.nav`
   width: 100%;
   background: ${(props) => props.theme.color.white};
   ${(props) => props.theme.flexRow}
+  justify-content: space-around;
+`
+
+export const NavWrapper = styled.div`
+  ${(props) => props.theme.flexRow}
 `
 
 export const FooterWrapper = styled.footer`
@@ -19,12 +24,18 @@ export const FooterWrapper = styled.footer`
 `
 
 export const CommonButtonWrapper = styled.button`
-  border: 0;
-  outine: none;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  outline: none;
   background: none;
   padding: 10px;
   &:active {
     outline: none;
+  }
+  transition: all 0.2s ease;
+  &:hover {
+    cursor: pointer;
+    font-weight: 700;
   }
 `
 

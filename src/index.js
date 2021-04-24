@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Suspense } from "react"
 import ReactDOM from "react-dom"
 import { Helmet } from "react-helmet"
 import { ThemeProvider } from "styled-components"
@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify"
 
 import { mainTheme, GlobalStyles } from "./themes/main.theme"
 import App from "./App"
+import LoadingSpinner from "./components/common/spinners/LoadingSpinner"
 import { store } from "./redux"
 
 import "./localization/i18n"
@@ -19,25 +20,27 @@ ReactDOM.render(
       {/* use other global metatags here */}
     </Helmet>
     <React.StrictMode>
-      {/* toasted messages  */}
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnVisibilityChange
-        draggable
-        pauseOnHover
-      />
+      <Suspense fallback={<LoadingSpinner />}>
+        {/* toasted messages  */}
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnVisibilityChange
+          draggable
+          pauseOnHover
+        />
 
-      <ReduxProvider store={store}>
-        <ThemeProvider theme={mainTheme}>
-          <GlobalStyles />
-          <App />
-        </ThemeProvider>
-      </ReduxProvider>
+        <ReduxProvider store={store}>
+          <ThemeProvider theme={mainTheme}>
+            <GlobalStyles />
+            <App />
+          </ThemeProvider>
+        </ReduxProvider>
+      </Suspense>
     </React.StrictMode>
   </>,
   document.getElementById("root")

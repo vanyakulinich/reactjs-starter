@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 import { useSelector, shallowEqual } from "react-redux"
 import { toast } from "react-toastify"
 import { useTranslation } from "react-i18next"
-import { withReduxActions } from "./withRedux"
-import { resetError } from "../redux/ducks/errorDucks"
+import { withReduxActions } from "./withReduxActions"
+import { resetError } from "../redux/ducks/errors.ducks"
 import { errorMsgNameSelector, isErrorSelector } from "../redux/selectors"
 
 const withErrorsToastHandle = (WrappedComponent) => {
