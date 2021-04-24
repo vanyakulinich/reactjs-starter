@@ -4,6 +4,6 @@
     "exampleFooter": "React Starter Example Footer"
   },
   "errors": {
-    "exampleError": "Example error text here"
+    "exampleError": "Example api error text here"
   }
 }
