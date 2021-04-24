@@ -3,6 +3,7 @@
  */
 import { actionCreator } from "../actionCreator"
 import httpService from "../../services/http.service"
+import { setError } from "./errors.ducks"
 
 // action types
 const SET_EXAMPLE_VALUE = "SET_EXAMPLE_VALUE"
@@ -32,6 +33,7 @@ export const exampleAsync = () => async (dispatch, getState) => {
     const testData = await httpService.getTestData()
   } catch (err) {
     // handle api error, e.g. dispatch some action for centralized errors in store
+    dispatch(setError("exampleError"))
   } finally {
     dispatch(setExampleValue("new value"))
   }
