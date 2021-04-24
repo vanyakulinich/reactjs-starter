@@ -2,6 +2,8 @@
  * This is an example of redux "ducks" approach
  */
 import { actionCreator } from "../actionCreator"
+import httpService from "../../services/http.service"
+
 // action types
 const SET_EXAMPLE_VALUE = "SET_EXAMPLE_VALUE"
 
@@ -26,5 +28,11 @@ export const setExampleValue = (payload) => actionCreator(SET_EXAMPLE_VALUE, pay
 // async actions
 export const exampleAsync = () => async (dispatch, getState) => {
   // do smth async
-  dispatch(setExampleValue("new value"))
+  try {
+    const testData = await httpService.getTestData()
+  } catch (err) {
+    // handle api error, e.g. dispatch some action for centralized errors in store
+  } finally {
+    dispatch(setExampleValue("new value"))
+  }
 }
